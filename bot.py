@@ -4,8 +4,10 @@ from aiogram import Bot, Dispatcher, F
 from aiogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 from aiogram.filters import Command
 
-TOKEN = "8198819707:AAHDYtkYYqnHxyJsiPutKaCwFUbHhTFc5aw"
-ADMIN_ID = 8228145532  # твой ID
+import os
+
+TOKEN = os.getenv("TOKEN")
+ADMIN_ID = int(os.getenv("ADMIN_ID"))
 
 bot = Bot(TOKEN)
 dp = Dispatcher()
@@ -84,3 +86,4 @@ async def main():
 
 if __name__ == "__main__":
     asyncio.run(main())
+
